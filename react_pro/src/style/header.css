@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Red+Hat+Display&family=Cormorant&display=swap');
+
+@media screen {
+    
+    h1{ font-family:"julius sans one", "red hat display", sans-serif;font-size: 55px; font-weight: bold;
+        color: white;}
+
+    h2{ font-family: cormorant, "red hat display", sans-serif;font-size:27px;
+        color: white;}
+
+    h3{ font-family:"julius sans one", "red hat display", sans-serif; font-size: 27px ;
+        color: black;}
+
+    h4{ font-family:"julius sans one", "red hat display", sans-serif; font-size: 22px ;
+        color: white;}
+    
+    h5{ font-family: "julius sans one", "red hat display", sans-serif; font-size:22px;
+        color: black;}
+
+    p{ font-family: "red hat display", sans-serif; font-size:18px;
+       color: black;
+    }
+    h6{font-family: "red hat display", sans-serif; font-size:18px;
+        color: white;}
+
+     /* Layout av grid ----------------------------------------------------------------------------------------------------*/
+    
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr; /* 7 kolumner */
+        grid-auto-rows: min-content; /* Anpassar höjden på varje rad efter innehållet */
+        gap: 2px;
+        height: auto;
+    }
+
+
+    /*Övre menyn med logga och sök-------#cdc8c5---#9C7578--------------------------------------------------------------------------*/
+    
+
+    .header {
+        display: grid;
+        grid-template-columns: inherit;
+        align-items: center;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        background: #E9E6E1;
+        padding: 20px;
+        height: 100px;       
+        text-align: center;
+        border-radius: 1px;
+    }
+
+    .logo{grid-column: 1 / 3;text-align: left;}
+
+    .search{grid-column: 6 / 7; align-items: center;position: relative; background-color: #C0B5AF;}
+    .search-box {
+        width: 100%; /* Gör att inputfältet fyller hela bredden av div:en */
+        padding: 10px;
+        border: none;
+        outline: none; /* Tar bort den standardblå ramen när du klickar i inputfältet */
+        border-radius: 4px; /* Rundade hörn på själva inputfältet */
+        box-sizing: border-box; /* Ser till att padding räknas med i bredden */
+        background-color: #C0B5AF;
+        font-family:"red hat display", sans-serif; 
+    }
+    .search-box:focus {
+        background-color: #d7cfca; /* Lägger till en bakgrundsfärg när man klickar i rutan */
+    }
+    .hidden {
+        display: none;
+    }
+    
+    #searchResults {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #C0B5AF;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 1000;
+        font-family: "red hat display", sans-serif;
+        text-align: left;
+    }
+    #searchResults li {padding: 10px; cursor: pointer;}
+    #searchResults li:hover {background: #f0f0f0;}
+
+    .language{grid-column: 7 / 8; text-align: center;  }
+
+    .image_logo{
+        transform: scale(1.2);
+    }
+
+    .lang-switch {
+        background:  #C0B5AF;
+        color: black;
+        border: none;
+        padding: 3px;
+        cursor: pointer;
+        font-size: 17px;
+        border-radius: 2px;
+    }
+
+  
+}
+

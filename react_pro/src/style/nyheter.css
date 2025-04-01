@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Red+Hat+Display&family=Cormorant&display=swap');
+
+@media screen {
+    
+    /* Textstorlekar---------------------------------------------------------------------------------------------------*/
+    h1{ font-family:"julius sans one", "red hat display", sans-serif;font-size: 55px; font-weight: bold;
+        color: white;}
+
+    h2{ font-family: cormorant, "red hat display", sans-serif;font-size:27px;
+        color: white;}
+
+    h3{ font-family:"julius sans one", "red hat display", sans-serif; font-size: 27px ;
+        color: black;}
+
+    h4{ font-family:"julius sans one", "red hat display", sans-serif; font-size: 22px ;
+        color: white;}
+    
+    h5{ font-family: "julius sans one", "red hat display", sans-serif; font-size:22px;
+        color: black;}
+
+    p{ font-family: "red hat display", sans-serif; font-size:18px;
+       color: black;
+    }
+    h6{font-family: "red hat display", sans-serif; font-size:18px;
+        color: white;}
+        
+     /* Layout av grid ----------------------------------------------------------------------------------------------------*/
+     .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr; /* 7 kolumner */
+        grid-auto-rows: auto; /*  rader */
+        gap: 2px;
+        min-height: 100vh;
+    } 
+
+
+  
+    /* Hamburgare-meny och sidrubrik------------------------------------------------------------------------------------*/
+    .top_bar {
+        grid-column: 1 / -1;
+        display: flex; 
+        justify-content: flex-start; 
+        gap:600px;
+        align-items: center;
+        position: relative;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+    }
+    .hamburger-menu2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50px;
+        height: 32px;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        color: rgb(12, 12, 12);
+    }
+    .bar {width: 100%; height: 5px; border-radius: 2px; }
+    .bar-1 { background-color: 	#5E6B7D;border: 0.2px solid black; }
+    .bar-2 { background-color: #cdc8c5;border: 0.2px solid black; }
+    .bar-3 { background-color: #ebdeda; border: 0.2px solid black;}
+    
+    .menu2 {
+        max-height: 0; 
+        overflow: hidden;
+        position: absolute;
+        top: 77px;
+        left: 0;
+        width: 200px;
+        padding: 0px;
+        flex-direction: column;
+        gap: 3px;
+        border-radius: 5px;
+        transition: max-height 0.6s ease-out, padding 0.6s ease-out;
+    }
+    .menu2.open {max-height: 400px; padding: 5px; }
+    .menu2 a {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        background: #E9E6E1; 
+        color: white;
+        padding: 2px 2px;
+        border: 2px solid #5E6B7D ;
+        cursor: pointer;
+        border-radius: 25px; 
+        text-align: center;
+        font-size: 12px !important;
+        text-decoration: none;
+        transition: background 0.3s;
+        width: 150px;
+        height: 50px;
+    }
+    .menu2 a:hover {background: #5E6B7D;}
+
+   
+    /*Nyheter-------------------------------------------------------------------------------------------------------------- */
+    .news{
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: inherit;
+        align-items: left;
+        gap: 10px;
+        background: white;
+        border-radius: 1px;
+    }
+    #n1{grid-column: 1 / -1; background: white; border-radius: 5px;border: 4px solid #ebdeda;}
+    #n2{grid-column: 1 / -1; background: #ebdeda; border-radius: 5px; }
+    #n3{grid-column: 1 / -1; background: white; border-radius: 5px; border: 4px solid #ebdeda;}
+    #n4{grid-column: 1 / -1; background: #ebdeda; border-radius: 5px; }
+    #n5{grid-column: 1 / -1; background: white; border-radius: 5px; border: 4px solid #ebdeda;}
+    #n6{grid-column: 1 / -1; background: #ebdeda; border-radius: 5px; }
+    
+    .imnyhet{
+        transform: scale(0.5);
+        display: inline-block; 
+        align-items: start;
+        margin-left: 10px; 
+        border-radius: 10px;
+        vertical-align: top;
+    }
+    .solo{
+        transform: scale(0.6);
+        display: inline-block;  
+        margin-left: 10px; 
+        border-radius: 10px;
+        vertical-align: top;
+    }
+
+  
+      .like-button {
+        background-color: #c9c6c6;
+        border: none;
+        color: white;
+        padding: 8px 12px;
+        font-size: 18px;
+        border-radius: 50%;
+        
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+      }
+      
+      .like-button:hover {
+        transform: scale(1.1);
+      }
+      
+    
+   
+    
+}

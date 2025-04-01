@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Red+Hat+Display&family=Cormorant&display=swap');
+
+@media screen {
+    
+    h1{ font-family:"julius sans one", "red hat display", sans-serif;font-size: 55px; font-weight: bold;
+        color: white;}
+
+    h2{ font-family: cormorant, "red hat display", sans-serif;font-size:27px;
+        color: white;}
+
+    h3{ font-family:"julius sans one", "red hat display", sans-serif; font-size: 27px ;
+        color: black;}
+
+    h4{ font-family:"julius sans one", "red hat display", sans-serif; font-size: 22px ;
+        color: white;}
+    
+    h5{ font-family: "julius sans one", "red hat display", sans-serif; font-size:22px;
+        color: black;}
+
+    p{ font-family: "red hat display", sans-serif; font-size:18px;
+       color: black;
+    }
+    h6{font-family: "red hat display", sans-serif; font-size:18px;
+        color: white;}
+
+     /* Layout av grid ----------------------------------------------------------------------------------------------------*/
+     .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr; /* 7 kolumner */
+        grid-auto-rows: auto; /*  rader */
+        gap: 2px;
+        min-height: auto;
+    } 
+
+
+
+    /*Framsidabilden med rubrik---------------------------------------------------------------------------------------------------*/
+    .front_image {
+        position: relative;  /* Behövs för att texten ska kunna placeras ovanpå */
+        width: 100%; 
+        display: grid;
+        grid-column: 1 / -1;
+    }
+    
+    /* Bilden ska fylla sin container */
+    .image_front {
+        width: 100%;
+        height: 505px;
+        object-fit: cover; 
+        display: block;
+        border-radius: 1px;
+        filter: brightness(50%);
+    }
+    
+    /* Texten placeras ovanpå bilden */
+    .text-overlay {
+        position: absolute;
+        top: 50%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        padding: 3px 3px;
+        white-space: nowrap;
+        text-align: center;                
+        border-radius: 5px;
+        /* Gör texten mer läsbar background: rgba(255, 255, 255, 0.3);  */
+    }
+
+   
+    /* Meny-delen -------------------------------------------------------------------------------------------------------*/
+    .menu {
+        grid-column: 1 / -1;
+        display: grid;
+        top: -40px;
+        grid-template-columns: inherit; 
+        justify-content: center; 
+       
+        position: relative;
+        padding: 4px;
+        gap: 1px;
+        
+    }
+    .menu-item {
+        display: flex; /* Gör att vi kan centrera innehållet */
+        align-items: center; /* Centrerar vertikalt */
+        justify-content: center; /* Centrerar horisontellt */
+
+        color: rgb(12, 12, 12);
+        text-align: center;
+        place-items: center;
+        padding: 5px 5px;
+        cursor: pointer;
+        border-radius: 1px;
+        text-decoration: none;
+        height: 50px;
+       
+    }
+    
+    .meny_start {grid-column: 2 / 3; background: #C0B5AF; }
+    .meny_information { grid-column:3 / 4;background:  #ebdeda;}
+    .meny_boka { grid-column:4 / 5;background:  #ebdeda; }
+    .meny_nyheter { grid-column:5 / 6; background: #ebdeda;}
+    .meny_våra_rum {  grid-column:6 /7;background: #ebdeda; }
+    /*border:1px solid #708090 */
+   
+    .menu-item:hover {
+        background: #C0B5AF;
+        transition: 0.3s;
+        
+        transform: scale(1.05)
+    }
+
+    /*Welcome--------------------------------------------------------------------------------------------------------------*/
+    .welcome {
+        display: grid;
+        grid-template-columns: 1fr; 
+        justify-items: center; 
+        align-items: center; 
+        grid-column: 1 / -1; 
+        background: #f5f2ef !important;
+        padding: 30px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    
+    .whead {grid-row: 1; }
+    
+    .wtext {grid-row: 2; max-width: 640px;text-align: left;}
+
+    /*  testdel------------------------------------------------*/
+    #carousel {
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-column: 1/-1;
+        overflow: hidden;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        position: relative;
+    }
+    
+    .carousel-container {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .carousel-slide {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    /* Info-boxens grundlayout */
+    .info-box {
+        position: relative;
+        flex: 0 0 calc(33.33% - 15px);
+        text-align: left;
+        background: white;
+        overflow: hidden;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Bilden fyller hela boxen */
+    .info-box img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    /* Textcontainer göms initialt */
+    .info-box .text-container {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 0;  /* Helt osynlig */
+        overflow: hidden;  /* Skalar ut texten från 0 höjd */
+        transition: height 0.5s ease-in-out;
+    }
+    
+    /* När du hovrar över boxen rullar texten ner */
+    .info-box:hover .text-container {
+        height: 150px;  /* Anpassa denna höjd beroende på hur mycket text du vill visa */
+    }
+    
+    /* Stil för texten inuti */
+    .info-box .text-container h5,
+    .info-box .text-container p {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        color: #333;
+    }
+    
+    /* När man hovrar på bilden */
+    .info-box:hover img {
+        transform: scale(0.6);
+    }
+    
+    .carousel-controls {
+        position: absolute;
+        top: 50%;  /* Centrera vertikalt */
+        left: 0;   /* Placera den första knappen på vänster sida */
+        right: 0;  /* Placera den andra knappen på höger sida */
+        display: flex;
+        justify-content: space-between; /* Sprid ut knapparna mellan vänster och höger */
+        transform: translateY(-50%); /* Justera för att få exakt vertikal centrering */
+        width: 96%; /* Se till att kontainern sträcker sig över hela bredden */
+        padding: 0 20px; /* Lite utrymme på sidorna */
+    }
+    
+    .carousel-controls button {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 5px; /* För rundade knappar */
+        transition: background-color 0.3s ease;
+    }
+    
+    .carousel-controls button:hover {
+        background-color: rgba(0, 0, 0, 0.7); /* Ändra bakgrund på hover */
+    }
+    
+    .carousel-controls .prev-btn {
+        left: 0; /* Placera föregående knapp till vänster */
+    }
+    
+    .carousel-controls .next-btn {
+        right: 0; /* Placera nästa knapp till höger */
+    }
+  
+    /* boka delen-----------------------------------------------------------------------------------------------------------*/
+    #book{
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-rows: auto auto;
+        align-items: center; 
+        grid-column: 1 / -1; 
+        background: 	#f5f2ef !important;
+        padding: 5px; 
+        text-align: left; 
+        border-radius: 5px;
+    }
+    
+    .bookimage{grid-column:1/3 ;grid-row: 2; transform: scale(0.7);}
+    .bookhead{grid-column:1/3 ; grid-row: 1;text-align: center}
+    
+
+    
+    .book_pictures {
+        display: grid;
+        grid-template-columns: inherit;
+        grid-column: 3/5;
+        grid-row: 2;
+        
+        justify-content: center;
+        align-items: center;
+        gap: 5px; /* Avstånd mellan bilderna */
+        padding: 10px;
+    }
+
+    .p-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    
+    .b1{grid-column: 1/2; grid-row: 1;}
+    .b2{grid-column: 2/3; grid-row: 1; }
+    .b3{grid-column: 3/4; grid-row: 1;}
+    .b4{grid-column: 1/2; grid-row: 3; }
+    .b5{grid-column: 2/3; grid-row: 3; }
+    .b6{grid-column: 3/4; grid-row: 3;}
+
+    .b1, .b2, .b3, .b4, .b5, .b6{
+        filter: brightness(1.2); 
+        height: 150px;
+        width: 150px;
+        transition: transform 0.6s ease-in-out; 
+        transform-origin: center;
+        border-radius: 10px; }
+
+    .middle-text{grid-column: 1/4; grid-row: 2; text-align: center;}
+
+  
+    
+    .b1:hover,.b2:hover, .b3:hover, .b4:hover, .b5:hover, .b6:hover{
+        transform: scale(1.4); 
+        z-index: 10; /* Gör så att den ligger över de andra */
+        
+    }
+
+    
+    
+    /*map-------------------------------------------------------------------------------------------------------------------*/
+    .map {
+        display: grid;
+        grid-template-columns: inherit; 
+        justify-items: center; 
+        grid-column: 1 / -1; 
+        background: white;
+        padding: 15px;
+        text-align: center;
+        border-radius: 5px;
+    }
+   
+    .mapimage {grid-column: 2/5;object-fit: cover; width: 100%;height: 400px; }
+    .maptext {grid-column: 5/7;text-align: left;}
+
+  
+
+}
+

@@ -1,0 +1,26 @@
+/* Lägg till i din globala CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;  /* Sätt 100% höjd på body och html */
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    height: auto;  /* Full höjd för hela appen */
+}
+
+
+main {
+    flex-grow: 1;  /* Gör så att main växer och tar upp kvarvarande utrymme */
+    padding: 20px;  /* Lägger till padding i main */
+   
+    overflow-y: auto;  /* Gör så att innehållet är scrollbart om det behövs */
+}
